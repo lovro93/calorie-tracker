@@ -1,13 +1,16 @@
+/* ===== RESET ===== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* ===== BASE ===== */
 html, body {
   height: 100%;
   background: #000;
   font-family: 'Orbitron', sans-serif;
+  color: #eafff5;
 }
 
 body {
@@ -18,35 +21,48 @@ body {
   overscroll-behavior: none;
 }
 
-/* APP */
+/* ===== APP WRAPPER ===== */
 .app {
   width: 100%;
   max-width: 420px;
+
+  /* MOBILE = FULL SCREEN */
   min-height: 100dvh;
-  padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom) 16px;
+
+  padding:
+    env(safe-area-inset-top)
+    16px
+    env(safe-area-inset-bottom)
+    16px;
+
   background: radial-gradient(circle at top, #111, #000);
-  box-shadow: 0 0 25px rgba(0,255,180,.35), inset 0 0 20px rgba(0,255,180,.15);
+
+  box-shadow:
+    0 0 25px rgba(0, 255, 180, 0.35),
+    inset 0 0 20px rgba(0, 255, 180, 0.15);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* TITLE */
+/* ===== TITLE ===== */
 h1 {
   text-align: center;
   margin-bottom: 16px;
+  font-weight: 800;
   color: #4dffcc;
-  text-shadow: 0 0 10px rgba(77,255,204,.8);
+  text-shadow: 0 0 12px rgba(77, 255, 204, 0.9);
 }
 
-/* GOALS */
+/* ===== GOALS ===== */
 .goals p {
   font-size: 13px;
   margin-bottom: 6px;
   color: #cafff0;
 }
 
-/* PROGRESS */
+/* ===== PROGRESS ===== */
 .progress-container {
   width: 100%;
   height: 12px;
@@ -54,24 +70,26 @@ h1 {
   border-radius: 6px;
   overflow: hidden;
   margin: 10px 0 14px;
+  box-shadow: inset 0 0 6px #000;
 }
 
 .progress-bar {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg,#00ffb3,#00ffaa);
-  transition: width .3s ease, background .3s ease;
+  background: linear-gradient(90deg, #00ffb3, #00ffaa);
+  transition: width 0.3s ease, background 0.3s ease;
 }
 
-/* WARNING */
+/* ===== WARNING ===== */
 .warning {
   text-align: center;
   font-weight: 700;
-  color: #ff3b3b;
   margin-bottom: 12px;
+  color: #ff3b3b;
+  text-shadow: 0 0 8px rgba(255, 59, 59, 0.9);
 }
 
-/* FORM */
+/* ===== FORM ===== */
 .form {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -79,71 +97,127 @@ h1 {
   margin-bottom: 14px;
 }
 
-select, input, button {
-  font-size: 16px; /* iOS ZOOM FIX */
+/* ===== INPUTS & SELECT ===== */
+select,
+input {
+  width: 100%;
   height: 44px;
-  border-radius: 10px;
-  outline: none;
-}
-
-/* INPUTS */
-select, input {
-  background: #050807;
-  border: 1px solid rgba(0,255,180,.35);
-  color: #eafff5;
   padding: 0 12px;
+
+  font-size: 16px; /* 🔥 iOS zoom fix */
+  font-family: 'Orbitron', sans-serif;
+
+  background: #050807;
+  border: 1px solid rgba(0, 255, 180, 0.35);
+  border-radius: 10px;
+  color: #eafff5;
+
+  outline: none;
+  box-shadow: inset 0 0 6px rgba(0, 255, 180, 0.15);
 }
 
-/* ADD BUTTON */
+input::placeholder {
+  color: #6fffdc;
+  opacity: 0.7;
+}
+
+/* ===== ADD BUTTON ===== */
 #addBtn {
   grid-column: span 2;
+  height: 44px;
+
+  border-radius: 12px;
   border: none;
-  background: linear-gradient(135deg,#00ffb3,#00ffaa);
+
+  background: linear-gradient(135deg, #00ffb3, #00ffaa);
   color: #001a12;
+
   font-weight: 800;
+  font-size: 16px;
+  font-family: 'Orbitron', sans-serif;
+
   cursor: pointer;
+
+  box-shadow:
+    0 0 12px rgba(0, 255, 180, 0.9),
+    inset 0 0 6px rgba(255, 255, 255, 0.3);
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-/* LIST */
+#addBtn:hover {
+  transform: translateY(-1px);
+}
+
+/* ===== LIST ===== */
 #list {
   list-style: none;
   margin-top: 10px;
 }
 
+/* ===== LIST ITEM ===== */
 #list li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 10px;
+
   background: #0f1412;
-  padding: 10px;
+  padding: 10px 12px;
   border-radius: 12px;
+
   margin-bottom: 8px;
+
+  border: 1px solid rgba(0, 255, 180, 0.25);
+  box-shadow: inset 0 0 10px rgba(0, 255, 180, 0.08);
 }
 
 .entry-text {
   font-size: 12px;
   line-height: 1.4;
+  color: #eafff5;
 }
 
-/* DELETE */
+/* ===== DELETE BUTTON ===== */
 .delete {
   width: 36px;
   height: 36px;
+  min-width: 36px;
+
   border-radius: 50%;
   border: none;
+
   background: #ff3b3b;
-  color: #fff;
+  color: white;
+  font-size: 16px;
+
+  cursor: pointer;
+
+  box-shadow: 0 0 10px rgba(255, 59, 59, 0.8);
 }
 
-/* RESET */
+/* ===== RESET BUTTON ===== */
 .reset {
+  width: 100%;
+  height: 42px;
   margin-top: 12px;
+
+  border-radius: 10px;
+  border: 1px solid rgba(255, 59, 59, 0.6);
   background: transparent;
-  border: 1px solid #ff5c5c;
+
   color: #ff5c5c;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+
+  cursor: pointer;
 }
 
-/* DESKTOP */
+.reset:hover {
+  background: rgba(255, 59, 59, 0.1);
+}
+
+/* ===== DESKTOP ===== */
 @media (min-width: 768px) {
   .app {
     min-height: auto;
