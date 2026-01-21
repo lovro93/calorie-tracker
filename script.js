@@ -136,6 +136,8 @@ function addEntry() {
 
   amountInput.value = "";
   render();
+  amountInput.blur();
+
 }
 
 document.getElementById("addBtn").addEventListener("click", addEntry);
