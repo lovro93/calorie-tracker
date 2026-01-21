@@ -1,71 +1,52 @@
-/* ===== RESET ===== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ===== FONT (CYBERPUNK) ===== */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
-
 html, body {
-  margin: 0;
-  padding: 0;
   height: 100%;
   background: #000;
+  font-family: 'Orbitron', sans-serif;
 }
 
-/* glavni wrapper */
 body {
+  min-height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100dvh; /* 🔥 dinamički viewport (NE 100vh) */
   overscroll-behavior: none;
 }
 
-/* APP KARTICA */
+/* APP */
 .app {
   width: 100%;
   max-width: 420px;
-
-  /* mobile = full screen */
   min-height: 100dvh;
-
-  padding: env(safe-area-inset-top)
-           16px
-           env(safe-area-inset-bottom)
-           16px;
-
+  padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom) 16px;
   background: radial-gradient(circle at top, #111, #000);
-  border-radius: 0;
-
-  box-shadow:
-    0 0 25px rgba(0, 255, 180, 0.35),
-    inset 0 0 20px rgba(0, 255, 180, 0.15);
-
+  box-shadow: 0 0 25px rgba(0,255,180,.35), inset 0 0 20px rgba(0,255,180,.15);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* ===== TITLE ===== */
+/* TITLE */
 h1 {
   text-align: center;
-  font-weight: 800;
   margin-bottom: 16px;
   color: #4dffcc;
-  text-shadow: 0 0 10px rgba(77, 255, 204, 0.8);
+  text-shadow: 0 0 10px rgba(77,255,204,.8);
 }
 
-/* ===== GOALS ===== */
+/* GOALS */
 .goals p {
   font-size: 13px;
   margin-bottom: 6px;
   color: #cafff0;
 }
 
-/* ===== PROGRESS ===== */
+/* PROGRESS */
 .progress-container {
   width: 100%;
   height: 12px;
@@ -73,157 +54,99 @@ h1 {
   border-radius: 6px;
   overflow: hidden;
   margin: 10px 0 14px;
-  box-shadow: inset 0 0 6px #000;
 }
 
 .progress-bar {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #00ffb3, #00ffaa);
-  transition: width 0.3s ease, background 0.3s ease;
+  background: linear-gradient(90deg,#00ffb3,#00ffaa);
+  transition: width .3s ease, background .3s ease;
 }
 
-/* ===== WARNING ===== */
+/* WARNING */
 .warning {
   text-align: center;
   font-weight: 700;
-  margin-bottom: 12px;
   color: #ff3b3b;
-  text-shadow: 0 0 8px rgba(255, 59, 59, 0.9);
+  margin-bottom: 12px;
 }
 
-/* ===== FORM ===== */
+/* FORM */
 .form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  width: 100%;
   margin-bottom: 14px;
 }
 
-/* ===== SELECT & INPUT ===== */
-select,
-input {
-  width: 100%;
+select, input, button {
+  font-size: 16px; /* iOS ZOOM FIX */
   height: 44px;
-  padding: 0 12px;
   border-radius: 10px;
-  background: #050807;
-  border: 1px solid rgba(0, 255, 180, 0.35);
-  color: #eafff5;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 13px;
   outline: none;
-  box-shadow: inset 0 0 6px rgba(0, 255, 180, 0.15);
 }
 
-input::placeholder {
-  color: #6fffdc;
-  opacity: 0.7;
+/* INPUTS */
+select, input {
+  background: #050807;
+  border: 1px solid rgba(0,255,180,.35);
+  color: #eafff5;
+  padding: 0 12px;
 }
 
-/* ===== ADD BUTTON (FIXED – NO ESCAPE) ===== */
+/* ADD BUTTON */
 #addBtn {
   grid-column: span 2;
-  width: 100%;
-  height: 44px;
-  border-radius: 12px;
   border: none;
-  background: linear-gradient(135deg, #00ffb3, #00ffaa);
+  background: linear-gradient(135deg,#00ffb3,#00ffaa);
   color: #001a12;
   font-weight: 800;
   cursor: pointer;
-  font-family: 'Orbitron', sans-serif;
-  box-shadow:
-    0 0 12px rgba(0, 255, 180, 0.9),
-    inset 0 0 6px rgba(255, 255, 255, 0.3);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-#addBtn:hover {
-  transform: translateY(-1px);
-  box-shadow:
-    0 0 18px rgba(0, 255, 180, 1),
-    inset 0 0 8px rgba(255, 255, 255, 0.4);
-}
-
-/* ===== LIST ===== */
+/* LIST */
 #list {
   list-style: none;
-  padding: 0;
   margin-top: 10px;
 }
 
-/* ===== LIST ITEM ===== */
 #list li {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   gap: 10px;
   background: #0f1412;
+  padding: 10px;
   border-radius: 12px;
-  padding: 10px 12px;
   margin-bottom: 8px;
-  border: 1px solid rgba(0, 255, 180, 0.25);
-  box-shadow: inset 0 0 10px rgba(0, 255, 180, 0.08);
 }
 
 .entry-text {
-  flex: 1;
   font-size: 12px;
   line-height: 1.4;
 }
 
-/* ===== DELETE BUTTON ===== */
+/* DELETE */
 .delete {
   width: 36px;
   height: 36px;
-  min-width: 36px;
   border-radius: 50%;
   border: none;
   background: #ff3b3b;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 10px rgba(255, 59, 59, 0.8);
+  color: #fff;
 }
 
-.delete:hover {
-  background: #ff0000;
-}
-
-/* ===== RESET ===== */
+/* RESET */
 .reset {
-  width: 100%;
-  height: 42px;
   margin-top: 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 59, 59, 0.6);
   background: transparent;
+  border: 1px solid #ff5c5c;
   color: #ff5c5c;
-  font-family: 'Orbitron', sans-serif;
-  cursor: pointer;
-  box-shadow: inset 0 0 8px rgba(255, 59, 59, 0.2);
 }
 
-.reset:hover {
-  background: rgba(255, 59, 59, 0.1);
-}
-input, select, button {
-  font-size: 16px;
-   -webkit-tap-highlight-color: transparent;
-}
-
+/* DESKTOP */
 @media (min-width: 768px) {
   .app {
     min-height: auto;
     border-radius: 18px;
   }
 }
-
-
-
-

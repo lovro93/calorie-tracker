@@ -3,58 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <title>Calorie & Macro Tracker</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#111111">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 
-<!-- iOS support -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Calories">
-<link rel="apple-touch-icon" href="icon-192.png">
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#111111">
 
+  <!-- iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Calories">
+  <link rel="apple-touch-icon" href="icon-192.png">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <div class="app">
+    <h1>Calorie Tracker</h1>
 
-<div class="app">
-  <h1>Calorie & Macro Tracker</h1>
+    <div class="goals">
+      <p>Kcal: <strong><span id="kcalTotal">0</span> / 2400</strong> (<span id="kcalPercent">0%</span>)</p>
+      <p>Protein: <strong><span id="proteinTotal">0</span> / 250 g</strong> (<span id="proteinPercent">0%</span>)</p>
+      <p>UH: <strong><span id="carbsTotal">0</span> g</strong></p>
+      <p>Masti: <strong><span id="fatTotal">0</span> g</strong></p>
+    </div>
 
-  <div class="goals">
-    <p>Kcal: <strong><span id="kcalTotal">0</span> / 2400</strong> (<span id="kcalPercent">0%</span>)</p>
-    <p>Protein: <strong><span id="proteinTotal">0</span> / 250 g</strong> (<span id="proteinPercent">0%</span>)</p>
-    <p>UH: <strong><span id="carbsTotal">0</span> g</strong></p>
-    <p>Masti: <strong><span id="fatTotal">0</span> g</strong></p>
+    <div class="progress-container">
+      <div id="kcalProgress" class="progress-bar"></div>
+    </div>
+
+    <p id="warning" class="warning"></p>
+
+    <div class="form">
+      <select id="foodSelect"></select>
+
+      <input
+        id="amountInput"
+        type="number"
+        inputmode="decimal"
+        step="any"
+        placeholder="Količina (g ili kom)"
+      />
+
+      <button id="addBtn">Dodaj</button>
+    </div>
+
+    <ul id="list"></ul>
+
+    <button id="resetBtn" class="reset">Reset day</button>
   </div>
 
-  <div class="progress-container">
-    <div id="kcalProgress" class="progress-bar"></div>
-  </div>
-
-  <p id="warning" class="warning"></p>
-
-  <div class="form">
-    <select id="foodSelect"></select>
-    <input
-  id="amountInput"
-  type="number"
-  inputmode="decimal"
-  step="any"
-  placeholder="Količina (g ili kom)"
-/>
-
-    <button id="addBtn">Dodaj</button>
-  </div>
-
-  <ul id="list"></ul>
-
-  <button id="resetBtn" class="reset">Reset day</button>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
