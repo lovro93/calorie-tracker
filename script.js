@@ -7,6 +7,8 @@ const foods = {
   salmon:{type:"grams",name:"Losos",kcal:208,protein:22,carbs:0,fat:13},
   tuna:{type:"grams",name:"Tuna",kcal:116,protein:26,carbs:0,fat:1},
   beef:{type:"grams",name:"Juneći but",kcal:170,protein:29,carbs:0,fat:5},
+  ground_beef_fatty:{type:"grams",name:"Mljevena junetina (masna)",kcal:250,protein:18,carbs:0,fat:22},
+
   pork_tenderloin:{type:"grams",name:"Svinjski lungić",kcal:143,protein:26,carbs:0,fat:3.5},
   pork_leg:{type:"grams",name:"Svinjski but",kcal:160,protein:27,carbs:0,fat:4.5},
   pasta:{type:"grams",name:"Tjestenina kuhana",kcal:131,protein:5,carbs:25,fat:1.1},
