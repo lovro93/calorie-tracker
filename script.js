@@ -25,14 +25,56 @@ const foods = {
   mayo_light:{type:"grams",name:"Thommy majoneza light",kcal:270,protein:1,carbs:6,fat:25},
   ketchup:{type:"grams",name:"Ketchup",kcal:112,protein:1.3,carbs:26,fat:0.2},
   mustard:{type:"grams",name:"Senf",kcal:66,protein:4.4,carbs:6.3,fat:4},
+  potato_baked: { type:"grams", name:"Krumpir pečeni (bez ulja)", kcal:90, protein:2, carbs:21, fat:0.1 },
+
 
   tortilla_m:{type:"unit",unit:"kom",name:"Tortilla M",kcal:150,protein:4,carbs:25,fat:4},
   tortilla_l:{type:"unit",unit:"kom",name:"Tortilla L",kcal:220,protein:6,carbs:35,fat:6},
-
+  blueberries: {type: "grams",name: "Borovnice",kcal: 57,protein: 0.7,carbs: 14.5, fat: 0.3},
   egg:{type:"unit",unit:"kom",name:"Jaje",kcal:78,protein:6.3,carbs:0.6,fat:5.3},
   whey:{type:"unit",unit:"scoop",name:"Whey (1 scoop)",kcal:120,protein:24,carbs:3,fat:1},
   toast:{type:"unit",unit:"kriška",name:"Tost kruh",kcal:70,protein:2.5,carbs:13,fat:1},
-  beer:{type:"unit",unit:"boca",name:"Heineken 0.33L",kcal:139,protein:1.5,carbs:11,fat:0}
+  beer:{type:"unit",unit:"boca",name:"Heineken 0.33L",kcal:139,protein:1.5,carbs:11,fat:0},
+  sprite_025: {
+  type: "unit",
+  unit: "čaša",
+  name: "Sprite 0.25 L",
+  kcal: 50,
+  protein: 0,
+  carbs: 13.5,
+  fat: 0
+},
+
+schweppes_bitter_lemon_025: {
+  type: "unit",
+  unit: "čaša",
+  name: "Schweppes Bitter Lemon 0.25 L",
+  kcal: 80,
+  protein: 0,
+  carbs: 21,
+  fat: 0
+},
+
+cappy_apricot_250: {
+  type: "unit",
+  unit: "čaša",
+  name: "Cappy Marelica 250 ml",
+  kcal:90 ,
+  protein: 0.5,
+  carbs: 25,
+  fat: 0
+},
+schweppes_tangerine_250: {
+  type: "unit",
+  unit: "čaša",
+  name: "Schweppes Tangerine 0.25L",
+  kcal: 75,
+  protein: 0,
+  carbs: 7.1,
+  fat: 0
+},
+
+
 };
 
 const foodSelect = document.getElementById("foodSelect");
