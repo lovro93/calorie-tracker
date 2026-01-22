@@ -15,6 +15,8 @@ const foods = {
   rice:{type:"grams",name:"Riža kuhana",kcal:130,protein:2.7,carbs:28,fat:0.3},
   potato:{type:"grams",name:"Krumpir kuhani",kcal:77,protein:2,carbs:17,fat:0.1},
   oats:{type:"grams",name:"Zobene pahuljice",kcal:389,protein:16.9,carbs:66.3,fat:6.9},
+  turkey_fitness_ham:{type:"grams",name:"Pureća šunka Fitness (Vindija)",kcal:90,protein:18,carbs:1,fat:1},
+
 
   olive_oil:{type:"grams",name:"Maslinovo ulje",kcal:884,protein:0,carbs:0,fat:100},
   sunflower_oil:{type:"grams",name:"Suncokretovo ulje",kcal:884,protein:0,carbs:0,fat:100},
